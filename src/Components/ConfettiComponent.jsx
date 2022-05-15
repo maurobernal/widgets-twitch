@@ -69,8 +69,8 @@ const ConfettiComponent = () => {
           dragFriction: 0.12,
           duration: 3000,
           stagger: 3,
-          width: "40px",
-          height: "50px",
+          width: "20px",
+          height: "20px",
           perspective: "500px",
           colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
         }}/>
