@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TMI from "tmi.js";
+import { useEffect } from "react";
+import { useState } from "react";
 
-function App() {
+const App = function App() {
+  const [valor, UseValor] = useState(5);
+  const handlerButton = () => {
+    UseValor(valor + 1);
+  };
+
+  const handlerComando=()=>{
+    console.log("vino comando desde el chat")
+    handlerButton();
+  }
+
+  const handlerLoad = () => {
+    //TMI Twitch
+    const client = new TMI.Client({ channels: ["maurobernal"] });
+
+    client.connect();
+    console.log("Cliente conectado");
+
+    client.on("message", (channel, tags, message, self) => {
+      if (tags["display-name"] != "maurobernal" || !message.startsWith("!ejemplo"))
+        return;
+
+        handlerComando();
+        
+    });
+  };
+
+  useEffect(handlerLoad, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hola Mundo
+      <h1>valor: {valor}</h1>
+      <button onClick={handlerButton}> Sumar</button>
     </div>
   );
-}
+};
 
 export default App;
