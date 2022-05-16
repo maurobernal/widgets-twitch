@@ -1,11 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import ConfettiComponent from './Components/ConfettiComponent';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./index.css";
+import Home from "./Components/Home";
+import Confetti from "./Components/Confetti";
+import Firework from "./Components/Firework";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ConfettiComponent />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/confetti" element={<Confetti />} />
+        <Route path="/firework" element={<Firework />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,0 +1,11 @@
+.menu{
+    font-size:20px;
+    color: blueviolet;
+    box-sizing: border-box;
+    
+  }
+  .menuopcion a{
+    font-size: 20px;
+    text-decoration: none;
+    
+  }
