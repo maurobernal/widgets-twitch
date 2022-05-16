@@ -1,27 +1,33 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import Confetti from "react-dom-confetti";
+import ConfettiDOM from "react-dom-confetti";
 import TMI from "tmi.js";
-import "./ConfettiComponent.css";
+import useSound from 'use-sound'
+import mySound from '../Audios/confetti.mp3'
+import "./Confetti.css";
+//https://daniel-lundin.github.io/react-dom-confetti/
 
-const ConfettiComponent = () => {
+
+
+const Confetti = () => {
+  const [playSound] = useSound(mySound)
   
   
   const handlerActivarConfetti = () => {
     console.log("Activar el confetti");
+    playSound();
     UseEstadoConfetti(!confetti_activo);
 
   };
 
   const [confetti_activo, UseEstadoConfetti] = useState(false);
-  const [confetti_height, UseEstadoHeight] = useState(500);
   const [mensaje, UseMensaje] = useState("");
   
   
   const handlerButton = () => {
-    console.log("cambiando estado", confetti_activo);
+    console.log("cambiando estado de:", confetti_activo," a", !confetti_activo);
+    playSound();
     UseEstadoConfetti(!confetti_activo);
-    UseEstadoHeight(0);
   };
 
   const handlerLoad = () => {
@@ -40,6 +46,7 @@ const ConfettiComponent = () => {
       )
         return;
         UseMensaje("Comando:"+message);
+        playSound();
         UseEstadoConfetti(!confetti_activo);
 
     });
@@ -55,29 +62,30 @@ const ConfettiComponent = () => {
     <>
       <>
         <div>
-          <h5>Estado: {confetti_activo.toString()}</h5>
-          <h5>Mensaje: {mensaje.toString()}</h5>
-
+     
           <button onClick={handlerButton}> Cambiar</button>
         </div>
-        <div>
-          <Confetti active={confetti_activo}   config={{
-          angle: 90,
-          spread: 360,
-          startVelocity: 40,
-          elementCount: 70,
-          dragFriction: 0.12,
-          duration: 3000,
-          stagger: 3,
-          width: "20px",
-          height: "20px",
-          perspective: "500px",
-          colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
-        }}/>
+        <div className="confetti">
+          <ConfettiDOM className="confetti" active={confetti_activo}   config={config}/>
         </div>
       </>
     </>
   );
 };
 
-export default ConfettiComponent;
+
+const config = {
+  angle: 90,
+  spread: 360,
+  startVelocity: 40,
+  elementCount: 70,
+  dragFriction: 0.12,
+  duration: 3000,
+  stagger: 3,
+  width: "10px",
+  height: "10px",
+  perspective: "500px",
+  colors: ["#000", "#f00"]
+};
+
+export default Confetti;
