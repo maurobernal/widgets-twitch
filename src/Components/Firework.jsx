@@ -1,8 +1,7 @@
-import { FireworksJS } from 'fireworks-js/dist/react'
-import { CSSProperties } from 'react'
+import { Fireworks } from 'fireworks-js/dist/react'
 
 
-const Fireworks = () => {
+const Firework = () => {
 
   const options = {
     speed: 3
@@ -17,6 +16,7 @@ const Fireworks = () => {
     background: '#000'
   }
 
+ 
   return <Fireworks options={options} style={style} />
 }
-export default Fireworks
+export default Firework

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./Components/Home";
 import Confetti from "./Components/Confetti";
-import Fireworks from "./Components/Fireworks";
+import Firework from "./Components/Firework";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +13,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/confetti" element={<Confetti />} />
-        <Route path="/fireworks" element={<Fireworks />} />
+        <Route path="/firework" element={<Firework />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
