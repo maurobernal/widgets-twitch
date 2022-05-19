@@ -72,14 +72,14 @@ const config = {
   angle: 90,
   spread: 360,
   startVelocity: 40,
-  elementCount: 70,
+  elementCount: 270,
   dragFriction: 0.12,
   duration: 3000,
-  stagger: 3,
+  stagger: 1,
   width: "10px",
   height: "10px",
-  perspective: "500px",
-  colors: ["#000", "#f00"],
+  perspective: "800px",
+  colors: ["#F05A1A", "#5DC1B9", "#000", "#FFF"],
 };
 
 export default Confetti;
