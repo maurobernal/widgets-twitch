@@ -1,5 +1,5 @@
-body{
-    background-color: transparent;
+.confetti{
+    background-color: white;
     flex: 1;
     display: flex;
     align-items: center;
@@ -7,10 +7,3 @@ body{
     margin-top: 300px;
 }
 
-confetti {
-    background-color: aqua;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }

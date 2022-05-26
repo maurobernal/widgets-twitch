@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import("./Home.css");
+import { Link } from 'react-router-dom';
+import('./Home.css');
 const Home = () => {
   return (
     <div className="menu">
@@ -7,6 +7,9 @@ const Home = () => {
         <h4>Opciones:</h4>
         <div className="menuopcion">
           <ul>
+            <li>
+              <Link to="/Help">Help</Link>
+            </li>
             <li>
               <Link to="/Confetti">Confetti</Link>
             </li>
