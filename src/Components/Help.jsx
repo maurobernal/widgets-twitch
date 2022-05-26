@@ -1,37 +1,57 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
 import './Help.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro'; // <-- import styles to be used
+import { FaRegGrinSquintTears, FaPhotoVideo } from 'react-icons/fa';
+import TMI from 'tmi.js';
 
 
 const Help = () => {
-  
+
+  const [twitch] = useState(new TMI.Client({ channels: ['maurobernal'] }));
+  const handlerLoad = () => {
+    twitch.connect();
+    console.log('Cliente conectado');
+
+    twitch.on('message', (channel, tags, message) => {
+      if (!message.includes('https://maurobernal.com.ar/twitch/help')) return;
+
+      console.log(message);
+    });
+
+    return () => {
+      twitch.disconnect();
+    };
+  };
+
+  useEffect(handlerLoad, []);
+
   return (
-    <div className='Help'>
-      <h3>Comandos para el stream!</h3>
-
-      <section>
-        <div className='square_box box_three'></div>
-        <div className='square_box box_four'></div>
-        <div className='container mt-5'>
-          <div className='row'>
-            <div>
-              <FontAwesomeIcon icon={solid('user-secret')} />
-              <FontAwesomeIcon icon={regular('coffee')} />
-
-      With Coffee Checked, these companies always know their coffee is hot and ready!
-            </div>
-            <div className="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
-              <i className="fas fa-lightbulb-on"></i>
-              <i className="start-icon far fa-check-circle faa-tada animated"></i>
-              <strong className="font__weight-semibold">Well done!</strong> You successfullyread this important.
-            </div>
-
-          </div>
-        </div>
-      </section>
-      
-    </div>
+    <div className="Help">
+      <div className="Titulo">
+        <h3>Comandos para el stream!</h3>
+      </div>
     
+      <div className="Recuadro">
+        <div className="Head">
+          <FaRegGrinSquintTears size={15} /> !Confetti
+        </div>
+        <div className="Cuerpo">
+           Dale alegría al stream.
+          <span> Tira confettis</span>
+        </div>
+      </div>
+
+      <div className="Recuadro">
+        <div className="Head">
+          <FaPhotoVideo size={15} /> !Foto
+        </div>
+        <div className="Cuerpo">
+          Captura el stream.
+          <span> Mira que caripela</span>
+        </div>
+      </div>
+     
+    </div>
   );
 };
 
