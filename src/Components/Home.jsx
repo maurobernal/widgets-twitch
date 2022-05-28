@@ -16,6 +16,9 @@ const Home = () => {
             <li>
               <Link to="/Firework">Firework</Link>
             </li>
+            <li>
+              <Link to="/Hola">Hola</Link>
+            </li>
           </ul>
         </div>
       </nav>

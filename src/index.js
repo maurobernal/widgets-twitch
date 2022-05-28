@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import Confetti from './Components/Confetti';
 import Firework from './Components/Firework';
 import Help from './Components/Help';
+import Hola from './Components/Hola';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         <Route path="/help" element={<Help />} />
         <Route path="/confetti" element={<Confetti />} />
         <Route path="/firework" element={<Firework />} />
+        <Route path="/hola" element={<Hola />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -24,6 +24,7 @@ module.exports = {
       'error',
       2
     ],
+    'no-multiple-empty-lines': [1, {'max': 1, 'maxEOF': 1}],
     'quotes': [
       'error',
       'single'

@@ -21,13 +21,11 @@ const Confetti = () => {
         UseEstadoConfetti(false);
       }, 1000);
     }, 1100);
-    
 
     setTimeout(() => {
       clearInterval(intervalo);
     }, 3500);
   };
-   
 
   const handlerButton = () => handlerActivarConfetti();
 

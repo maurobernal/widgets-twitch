@@ -4,7 +4,6 @@ import './Help.css';
 import { FaRegGrinSquintTears, FaPhotoVideo } from 'react-icons/fa';
 import TMI from 'tmi.js';
 
-
 const Help = () => {
 
   const [twitch] = useState(new TMI.Client({ channels: ['maurobernal'] }));

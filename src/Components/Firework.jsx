@@ -1,6 +1,5 @@
 import { Fireworks } from 'fireworks-js/dist/react';
 
-
 const Firework = () => {
 
   const options = {
@@ -15,7 +14,6 @@ const Firework = () => {
     position: 'fixed',
     background: '#000'
   };
-
  
   return <Fireworks options={options} style={style} />;
 };
