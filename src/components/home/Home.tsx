@@ -18,6 +18,9 @@ const Home = () => {
             <li>
               <Link to="/Hola">Hola</Link>
             </li>
+            <li>
+              <Link to="/Messages">Messages</Link>
+            </li>
           </ul>
         </div>
       </nav>
