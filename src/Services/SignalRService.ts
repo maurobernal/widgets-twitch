@@ -4,7 +4,7 @@ import messageInterface from '../interfaces/messageInterface';
 
 export default function JoinSignalR() {
   const [data, setData] = useState({
-    message:{message:'',username:''},
+    message:{message:'',username:'',subscriber:false, displayName:''},
     activoPopUp:false,
   });
 
