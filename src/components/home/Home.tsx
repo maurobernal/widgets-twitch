@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import('./Home.css');
 const Home = () => {
   return (
-    <div className="menu">
+    <div className='container mx-auto align-middle p-3'>
       <nav>
         <h4>Opciones:</h4>
         <div className="menuopcion">
