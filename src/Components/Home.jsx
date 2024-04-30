@@ -22,6 +22,7 @@ const Home = () => {
           </ul>
         </div>
       </nav>
+      <h1>version 1.0</h1>
     </div>
   );
 };
