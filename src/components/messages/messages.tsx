@@ -59,17 +59,20 @@ const columns: TableColumn<messageInterface>[] = [
 
 
 return (
-      <>
-        <div className='bg-red-50'>
-        {listMessages[0]?.message}
+      <div className="container p-2">
+        <div className="flex flex-col gap-2 max-w-[800px]">
+            <div className="bg-purple-900 rounded">
+              <h1 className="text-center text-white">{listMessages[0]?.message}</h1>
+            </div>
+            <div className="bg-blue-50 rounded">
+               <DataTable
+              theme="dark"
+              columns={columns as TableColumn<messageInterface>[]}
+              data={listMessages}
+		          />
+            </div>
+          </div>
         </div>
-
-        <DataTable
-			columns={columns as TableColumn<messageInterface>[]}
-      data={listMessages}
-		/>
-
-      </>
 
  );
 };
