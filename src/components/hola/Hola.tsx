@@ -81,14 +81,14 @@ const Hola = () => {
         <div className="flex flex-col justify-center items-center align-middle content-center bg-red-100 rounded shadow-sm max-w-80">
           <div className="flex flex-col w-full max-w-[326px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-green-700">
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
-              <span className="text-sm font-semibold text-orange-300">{usuario}</span>
-              <span className="text-sm font-normal text-red-500">{new Date().toLocaleTimeString()+''}</span>
+              <span className="text-sm font-semibold text-orange-950">{usuario}</span>
+              <span className="text-sm font-normal text-red-900">{new Date().toLocaleTimeString()+''}</span>
             </div>
             <div className="flex justify-center items-center my-2.5 bg-gray-50 rounded p-2">
               <div className="me-2"></div>
               <img src={gif.url} width="200px" alt={gif.url} />
             </div>
-            <span className="flex items-center gap-2 text-sm font-medium text-white pb-2">
+            <span className="flex items-center gap-2 text-sm font-medium text-gray-800 pb-2">
               {saludo}
             </span>
           </div>
@@ -100,10 +100,10 @@ const Hola = () => {
           <div className="flex flex-col w-full max-w-[326px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-green-700">
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <span>{message.subscriber}</span>
-              <span className="text-sm font-semibold text-orange-300">{message.displayName}</span>
-              <span className="text-sm font-normal text-red-500">{new Date().toLocaleTimeString()+''}</span>
+              <span className="text-sm font-semibold text-orange-950">{message.displayName}</span>
+              <span className="text-sm font-normal text-red-900">{new Date().toLocaleTimeString()+''}</span>
             </div>
-            <span className="flex items-center gap-2 text-sm font-medium text-white pb-2">
+            <span className="flex items-center gap-2 text-sm font-medium text-gray-800 pb-2">
               {message.message}
             </span>
           </div>
