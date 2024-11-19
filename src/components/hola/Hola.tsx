@@ -75,11 +75,18 @@ const Hola = () => {
       }});
     return response.data; };
 
+const appStyles = {
+  fontWeight: 700,
+  fontSize: "32px",
+  color: "rebeccapurple",
+  backgroundColor: "gray",
+};
+
   return (
     <>
       <div className={activo ? '' : 'hidden'}>
         <div className="flex flex-col justify-center items-center align-middle content-center bg-red-100 rounded shadow-sm max-w-80">
-          <div className="flex flex-col w-full max-w-[326px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-green-700">
+          <div className="flex flex-col w-full max-w-[326px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-green-700" style={appStyles}>
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <span className="text-sm font-semibold text-orange-950">{usuario}</span>
               <span className="text-sm font-normal text-red-900">{new Date().toLocaleTimeString()+''}</span>
@@ -97,7 +104,7 @@ const Hola = () => {
 
       <div className={activoPopUp ? '' : 'hidden'}>
         <div className="flex flex-col justify-center items-center align-middle content-center bg-red-100 rounded shadow-sm max-w-80">
-          <div className="flex flex-col w-full max-w-[326px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-green-700">
+          <div className="flex flex-col w-full max-w-[326px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-green-700" style={appStyles}>
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <span>{message.subscriber}</span>
               <span className="text-sm font-semibold text-orange-950">{message.displayName}</span>

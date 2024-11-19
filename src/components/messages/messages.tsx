@@ -32,7 +32,12 @@ const Messages = () => {
    getMessages();
   }, []);
 
-
+const appStyles = {
+  fontWeight: 700,
+  fontSize: "32px",
+  color: "rebeccapurple",
+  backgroundColor: "gray",
+};
 
 
 const columns: TableColumn<messageInterface>[] = [
@@ -64,7 +69,7 @@ return (
             <div className="bg-purple-900 rounded">
               <h1 className="text-center text-white">{listMessages[0]?.message}</h1>
             </div>
-            <div className="bg-blue-50 rounded">
+            <div className="bg-blue-50 rounded" style={appStyles}>
                <DataTable
               theme="dark"
               columns={columns as TableColumn<messageInterface>[]}
